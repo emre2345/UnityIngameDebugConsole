@@ -66,8 +66,11 @@ namespace IngameDebugConsole
 
 		private void DeactivateEventSystem()
 		{
-           		if (embeddedEventSystem && EventSystem.current.gameObject != embeddedEventSystem)
-				embeddedEventSystem.SetActive( false );
+           	        if (embeddedEventSystem)
+		        {
+		        	if (EventSystem.current && EventSystem.current.gameObject != embeddedEventSystem)
+		                    embeddedEventSystem.SetActive(false);
+		        }
 		}
 	}
 }
